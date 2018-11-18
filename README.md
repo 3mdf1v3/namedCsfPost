@@ -1,7 +1,6 @@
 # namedCsfPost
 Custom csf iptables rules for bind traffic 
 
-#Install
-
+# Install
 cd /etc/csf
 
