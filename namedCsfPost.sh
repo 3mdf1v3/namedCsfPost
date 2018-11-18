@@ -25,4 +25,7 @@ ip6tables -I OUTPUT -p udp --source-port 53 -m string --algo kmp --from 30 --to 
 
 iptables -I INPUT -p udp -m string --hex-string "|000000010000ff000100002923280000|" --algo bm --dport 53 -j DROP
 ip6tables -I INPUT -p udp -m string --hex-string "|000000010000ff000100002923280000|" --algo bm --dport 53 -j DROP
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2ab7bbf5dc7e869e6b8d2d4bd039226cd2dbb4f3
