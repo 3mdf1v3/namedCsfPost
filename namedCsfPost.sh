@@ -5,9 +5,6 @@ ip6tables -I INPUT -p udp -m string --hex-string "|00000000000103697363036f72670
 iptables -I INPUT -p udp -m string --hex-string "|0000000000010472697065036e6574|" --algo bm --to 65535 --dport 53 -j DROP
 ip6tables -I INPUT -p udp -m string --hex-string "|0000000000010472697065036e6574|" --algo bm --to 65535 --dport 53 -j DROP
 
-# iptables -I INPUT -p udp --dport 53 -m string --from 50 --algo bm --hex-string '|0000FF0001|' -m recent --set --name dnsanyquery
-# ip6tables -I INPUT -p udp --dport 53 -m string --from 50 --algo bm --hex-string '|0000FF0001|' -m recent --set --name dnsanyquery
-
 iptables -A INPUT -p udp -m udp --dport 53 -m string --from 50 --algo bm --hex-string '|0000FF0001|' -m recent --set --name dnsanyquery --rsource
 ip6tables -A INPUT -p udp -m udp --dport 53 -m string --from 50 --algo bm --hex-string '|0000FF0001|' -m recent --set --name dnsanyquery --rsource
 
@@ -25,7 +22,3 @@ ip6tables -I OUTPUT -p udp --source-port 53 -m string --algo kmp --from 30 --to 
 
 iptables -I INPUT -p udp -m string --hex-string "|000000010000ff000100002923280000|" --algo bm --dport 53 -j DROP
 ip6tables -I INPUT -p udp -m string --hex-string "|000000010000ff000100002923280000|" --algo bm --dport 53 -j DROP
-<<<<<<< HEAD
-
-=======
->>>>>>> 2ab7bbf5dc7e869e6b8d2d4bd039226cd2dbb4f3
